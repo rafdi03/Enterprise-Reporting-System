@@ -1,0 +1,187 @@
+2026-01-07 13:27:07,028 - INFO - Script ETL dijalankan.
+2026-01-07 13:27:07,029 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 13:27:07,035 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 13:27:07,146 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 13:27:07,149 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 13:27:07,150 - INFO - Data siap diproses...
+2026-01-07 13:27:07,150 - INFO - --- Memulai proses LOAD ---
+2026-01-07 13:27:07,150 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 13:35:16,602 - INFO - Script ETL dijalankan.
+2026-01-07 13:35:16,602 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 13:35:16,609 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 13:35:16,784 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 13:35:16,786 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 13:35:16,789 - ERROR - Terjadi error fatal: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-01-07 15:30:54,841 - INFO - Script ETL dijalankan.
+2026-01-07 15:30:54,842 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:30:54,847 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:30:55,081 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:30:55,085 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:30:55,086 - ERROR - Terjadi error fatal: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-01-07 15:32:42,052 - INFO - Script ETL dijalankan.
+2026-01-07 15:32:42,052 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:32:42,058 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:32:42,261 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:32:42,265 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:32:42,266 - WARNING - ditemukan 1 nilai NULL di data transaksi.
+2026-01-07 15:32:42,267 - INFO - Nilai NULL di kolom 'jumlah' diisi dengan 0.
+2026-01-07 15:32:42,270 - INFO - Data siap diproses...
+2026-01-07 15:32:42,274 - INFO - Transformasi data selesai. menghasilkan 6 baris.
+2026-01-07 15:32:42,282 - INFO - Contoh data hasil transformasi:
+ transaksi_id  user_id             name                    email   jumlah
+          101        1    Leanne Graham        Sincere@april.biz  50000.0
+          102        2     Ervin Howell        Shanna@melissa.tv  25000.0
+          103      999              NaN                      NaN      0.0
+          104        2     Ervin Howell        Shanna@melissa.tv 100000.0
+          105        1    Leanne Graham        Sincere@april.biz  50000.0
+          106        5 Chelsey Dietrich Lucio_Hettinger@annie.ca  75000.0
+2026-01-07 15:32:42,283 - INFO - --- Memulai proses LOAD ---
+2026-01-07 15:32:42,283 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 15:47:03,915 - INFO - Script ETL dijalankan.
+2026-01-07 15:47:03,916 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:47:03,920 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:47:04,115 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:47:04,118 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:47:04,131 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:47:04,133 - WARNING - ditemukan 1 nilai NULL di data transaksi.
+2026-01-07 15:47:04,133 - INFO - Nilai NULL di kolom 'jumlah' diisi dengan 0.
+2026-01-07 15:47:04,137 - INFO - Data siap diproses...
+2026-01-07 15:47:04,142 - INFO - Transformasi data selesai. menghasilkan 6 baris.
+2026-01-07 15:47:04,147 - INFO - Contoh data hasil transformasi:
+ transaksi_id  user_id             name                    email   jumlah
+          101        1    Leanne Graham        Sincere@april.biz  50000.0
+          102        2     Ervin Howell        Shanna@melissa.tv  25000.0
+          103      999              NaN                      NaN      0.0
+          104        2     Ervin Howell        Shanna@melissa.tv 100000.0
+          105        1    Leanne Graham        Sincere@april.biz  50000.0
+          106        5 Chelsey Dietrich Lucio_Hettinger@annie.ca  75000.0
+2026-01-07 15:47:04,148 - INFO - --- Memulai proses LOAD ---
+2026-01-07 15:47:04,148 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 15:47:55,966 - INFO - Script ETL dijalankan.
+2026-01-07 15:47:55,967 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:47:55,974 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:47:56,106 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:47:56,117 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:47:56,118 - WARNING - ditemukan 1 nilai NULL di data transaksi.
+2026-01-07 15:47:56,120 - INFO - Nilai NULL di kolom 'jumlah' diisi dengan 0.
+2026-01-07 15:47:56,123 - INFO - Data siap diproses...
+2026-01-07 15:47:56,126 - INFO - Transformasi data selesai. menghasilkan 6 baris.
+2026-01-07 15:47:56,130 - INFO - Contoh data hasil transformasi:
+ transaksi_id  user_id             name                    email   jumlah
+          101        1    Leanne Graham        Sincere@april.biz  50000.0
+          102        2     Ervin Howell        Shanna@melissa.tv  25000.0
+          103      999              NaN                      NaN      0.0
+          104        2     Ervin Howell        Shanna@melissa.tv 100000.0
+          105        1    Leanne Graham        Sincere@april.biz  50000.0
+          106        5 Chelsey Dietrich Lucio_Hettinger@annie.ca  75000.0
+2026-01-07 15:47:56,131 - INFO - --- Memulai proses LOAD ---
+2026-01-07 15:47:56,131 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 15:48:33,910 - INFO - Script ETL dijalankan.
+2026-01-07 15:48:33,911 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:48:33,916 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:48:34,056 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:48:34,067 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:48:34,068 - WARNING - ditemukan 1 nilai NULL di data transaksi.
+2026-01-07 15:48:34,069 - INFO - Nilai NULL di kolom 'jumlah' diisi dengan 0.
+2026-01-07 15:48:34,072 - INFO - Data siap diproses...
+2026-01-07 15:48:34,074 - INFO - Transformasi data selesai. menghasilkan 6 baris.
+2026-01-07 15:48:34,077 - INFO - Contoh data hasil transformasi:
+ transaksi_id  user_id             name                    email   jumlah
+          101        1    Leanne Graham        Sincere@april.biz  50000.0
+          102        2     Ervin Howell        Shanna@melissa.tv  25000.0
+          103      999              NaN                      NaN      0.0
+          104        2     Ervin Howell        Shanna@melissa.tv 100000.0
+          105        1    Leanne Graham        Sincere@april.biz  50000.0
+          106        5 Chelsey Dietrich Lucio_Hettinger@annie.ca  75000.0
+2026-01-07 15:48:34,078 - INFO - --- Memulai proses LOAD ---
+2026-01-07 15:48:34,078 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 15:50:49,649 - INFO - Script ETL dijalankan.
+2026-01-07 15:50:49,649 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 15:50:49,655 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 15:50:49,865 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 15:50:49,867 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 15:50:49,869 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 15:50:49,873 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 15:50:49,875 - INFO - --- Memulai proses LOAD ---
+2026-01-07 15:50:49,881 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 15:50:49,881 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:28:08,484 - INFO - Script ETL dijalankan.
+2026-01-07 16:28:08,484 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:28:08,489 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:28:08,796 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:28:08,797 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:28:08,798 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:28:08,809 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:28:08,809 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:28:08,813 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:28:08,814 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:29:23,508 - INFO - Script ETL dijalankan.
+2026-01-07 16:29:23,508 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:29:23,510 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:29:24,358 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:29:24,359 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:29:24,360 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:29:24,362 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:29:24,362 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:29:24,365 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:29:24,365 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:32:15,727 - INFO - Script ETL dijalankan.
+2026-01-07 16:32:15,727 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:32:15,734 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:32:16,750 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:32:16,752 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:32:16,769 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:32:16,774 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:32:16,775 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:32:16,778 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:32:16,779 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:33:09,628 - INFO - Script ETL dijalankan.
+2026-01-07 16:33:09,628 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:33:09,632 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:33:10,097 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:33:10,099 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:33:10,107 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:33:10,110 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:33:10,110 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:33:10,114 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:33:10,114 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:34:17,578 - INFO - Script ETL dijalankan.
+2026-01-07 16:34:17,578 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:34:17,585 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:34:17,806 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:34:17,821 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:34:17,834 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:34:17,839 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:34:17,839 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:34:17,844 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:34:17,844 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:35:35,413 - INFO - Script ETL dijalankan.
+2026-01-07 16:35:35,413 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:35:35,418 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:35:35,700 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:35:35,716 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:35:35,730 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:35:35,734 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:35:35,735 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:35:35,739 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:35:35,739 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:35:49,429 - INFO - Script ETL dijalankan.
+2026-01-07 16:35:49,430 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:35:49,435 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:35:49,661 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:35:49,680 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:35:49,696 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:35:49,701 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:35:49,702 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:35:49,705 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:35:49,705 - INFO - Script ETL selesai dengan sukses.
+2026-01-07 16:37:07,847 - INFO - Script ETL dijalankan.
+2026-01-07 16:37:07,848 - INFO - --- Memulai proses EXTRACT ---
+2026-01-07 16:37:07,853 - INFO - Sukses baca CSV. Total baris: 6
+2026-01-07 16:37:08,208 - INFO - Sukses tarik API. Total user: 10
+2026-01-07 16:37:08,226 - INFO - --- Memulai proses TRANSFORM ---
+2026-01-07 16:37:08,242 - WARNING - Ditemukan 1 nilai NULL di kolom 'jumlah'. Mengisi dengan 0.
+2026-01-07 16:37:08,247 - INFO - Transformasi selesai. Menghasilkan 6 baris data bersih.
+2026-01-07 16:37:08,248 - INFO - --- Memulai proses LOAD ---
+2026-01-07 16:37:08,252 - INFO - SUKSES! Data berhasil disimpan ke 'laporan_final.csv'
+2026-01-07 16:37:08,253 - INFO - Script ETL selesai dengan sukses.
