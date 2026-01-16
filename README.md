@@ -63,7 +63,7 @@ graph TD
     end
 
     %% Flow Connections
-    User -->|Drag & Drop CSV| UploadUI
+    User -->|Drag and Drop CSV| UploadUI
     UploadUI -->|POST Request| Ingest
     Ingest -->|Generate Suffix| BatchLogic
     BatchLogic -->|Save data_raw_150126| RawTable
@@ -72,11 +72,11 @@ graph TD
     Trigger -->|Execute Subprocess| dbt_run
     
     dbt_run -->|Read| RawTable
-    dbt_run -->|Clean & Extract| Regex
+    dbt_run -->|Clean and Extract| Regex
     Regex -->|Apply Segmentation| BizLogic
     BizLogic -->|Materialize| FinalTable
     
-    DashboardUI -->|Query (SQL)| FinalTable
+    DashboardUI -->|SQL Query| FinalTable
     FinalTable -->|Return Data| DashboardUI
     DashboardUI -->|Download CSV| User
 
