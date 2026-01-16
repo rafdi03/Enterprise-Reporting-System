@@ -174,8 +174,6 @@ Open your browser and navigate to:
 
 > *Built with precision for scalable data operations.*
 
-```
-
 ---
 
 ### **Step 2: Update `requirements.txt` (Crucial)**
