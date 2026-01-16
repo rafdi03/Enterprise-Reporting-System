@@ -240,8 +240,7 @@ Open your browser and navigate to:
 **Aryaguna Abi Rafdi Yasa**
 
 * *System Architect & Data Engineer*
-* [GitHub Profile]([https://www.google.com/search?q=https://github.com/rafdi03](https://github.com/rafdi03))
-
+* [GitHub Profile](https://github.com/rafdi03)
 ---
 
 > *Built with precision for scalable data operations.*
