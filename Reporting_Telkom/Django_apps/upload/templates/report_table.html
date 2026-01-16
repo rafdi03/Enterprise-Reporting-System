@@ -1,0 +1,347 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Aryaguna Reporting</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/fixedheader/3.3.2/css/fixedHeader.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --sidebar-width: 260px;
+            --header-height: 70px;
+            --primary-color: #4e73df;
+            --bg-color: #f3f4f6;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0; left: 0;
+            background: #1a1c23;
+            color: #fff;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+        }
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.7);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            transform: translateX(5px);
+        }
+        .creator-badge {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .creator-badge small { display: block; color: #aaa; font-size: 0.7rem; text-transform: uppercase; }
+        .creator-badge strong { color: #fff; font-size: 0.85rem; }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px 40px;
+            min-height: 100vh;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+        }
+        .batch-badge {
+            background: #eef2ff;
+            color: #4e73df;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- TABLE CARD --- */
+        .table-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: none;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        /* DataTables Customization */
+        table.dataTable { border-collapse: separate; border-spacing: 0; width: 100% !important; }
+        table.dataTable thead th {
+            background-color: #f8f9fc !important;
+            color: #5a5c69;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            border-bottom: 2px solid #e3e6f0;
+            padding: 15px !important;
+        }
+        table.dataTable tbody td {
+            font-size: 0.85rem;
+            color: #333;
+            vertical-align: middle;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 12px 15px !important;
+        }
+        table.dataTable tbody tr:hover {
+            background-color: #f8f9fc;
+        }
+        
+        /* Edit Cell Styling */
+        .editable { 
+            position: relative; 
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .editable:hover { 
+            background-color: #fff9c4 !important; /* Kuning lembut */
+            outline: 1px dashed #fbc02d;
+        }
+        .editable:hover::after {
+            content: "\F4CB"; /* Bootstrap Icons Pencil */
+            font-family: "bootstrap-icons";
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: #fbc02d;
+        }
+        .cell-changed {
+            background-color: #d1e7dd !important; 
+            color: #0f5132;
+            font-weight: 600;
+            animation: highlight 1s ease;
+        }
+
+        @keyframes highlight {
+            0% { background-color: #198754; color: white; }
+            100% { background-color: #d1e7dd; color: #0f5132; }
+        }
+
+        /* Buttons */
+        .btn-modern {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-download { background: #1cc88a; color: white; border: none; }
+        .btn-download:hover { background: #17a673; color: white; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(28, 200, 138, 0.3); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div>
+            <a href="#" class="brand">
+                <i class="bi bi-grid-1x2-fill text-primary"></i> REPORTING APP
+            </a>
+            <div class="mt-4">
+                <a href="{% url 'upload_home' %}" class="nav-link">
+                    <i class="bi bi-cloud-upload"></i> Upload Baru
+                </a>
+                <a href="#" class="nav-link active">
+                    <i class="bi bi-table"></i> Data Report
+                </a>
+            </div>
+        </div>
+        
+        <div class="creator-badge">
+            <small>Developed & Designed By</small>
+            <strong>Aryaguna Abi Rafdi Yasa</strong>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div>
+                <h4 class="m-0 fw-bold text-dark">Laporan Mobile Apps</h4>
+                <span class="text-muted small">Real-time Data Transformation Dashboard</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="batch-badge">
+                    <i class="bi bi-clock-history"></i> Batch: {{ suffix }}
+                </span>
+                <a href="{% url 'download_report' suffix 'csv' %}" class="btn btn-modern btn-download">
+                    <i class="bi bi-file-earmark-excel-fill"></i> Download CSV
+                </a>
+            </div>
+        </header>
+
+        <div class="table-card">
+            <div class="table-responsive">
+                <table id="mainTable" class="table table-hover nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            {% for col in columns %}
+                                <th>{{ col|title|replace_underscore }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in data %}
+                        <tr data-id="{{ row.id }}">
+                            {% for col in columns %}
+                                {% if col == 'id' %}
+                                    <td class="text-muted bg-light user-select-all" style="font-family: 'JetBrains Mono'; font-size: 0.75rem;">
+                                        {{ row|get_item:col|slice:":8" }}...
+                                    </td>
+                                {% else %}
+                                    <td class="editable" data-col="{{ col }}" contenteditable="true">
+                                        {{ row|get_item:col }}
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Setup DataTables
+            var table = $('#mainTable').DataTable({
+                scrollX: true,
+                fixedHeader: true,
+                pageLength: 25,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search data...",
+                    lengthMenu: "Show _MENU_ entries"
+                },
+                dom: '<"d-flex justify-content-between align-items-center mb-3"lf>rt<"d-flex justify-content-between align-items-center mt-3"ip>'
+            });
+
+            // Logic Edit Cell (Sama seperti sebelumnya tapi dengan UX lebih baik)
+            $('#mainTable tbody').on('focus', '.editable', function() {
+                $(this).data('before', $(this).text().trim());
+            });
+
+            $('#mainTable tbody').on('blur', '.editable', function() {
+                var $cell = $(this);
+                var newValue = $cell.text().trim();
+                var oldValue = $cell.data('before');
+                var colName = $cell.data('col');
+                var rowId = $cell.closest('tr').attr('data-id');
+
+                if (newValue === oldValue) return;
+
+                Swal.fire({
+                    title: 'Update Database?',
+                    html: `Ubah kolom <b>${colName}</b><br>Dari: <span class="text-danger">${oldValue}</span><br>Menjadi: <span class="text-success">${newValue}</span>?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#4e73df',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Save it!',
+                    cancelButtonText: 'Cancel',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: "{% url 'update_cell' %}",
+                            method: "POST",
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                table_name: "{{ table_name }}",
+                                id: rowId,
+                                column: colName,
+                                value: newValue
+                            }),
+                            success: function(response) {
+                                if(response.success) {
+                                    $cell.addClass('cell-changed');
+                                    const Toast = Swal.mixin({
+                                        toast: true,
+                                        position: 'top-end',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+                                    Toast.fire({ icon: 'success', title: 'Data Saved Successfully' });
+                                } else {
+                                    $cell.text(oldValue);
+                                    Swal.fire('Error', response.msg, 'error');
+                                }
+                            },
+                            error: function() {
+                                $cell.text(oldValue);
+                                Swal.fire('Error', 'Connection failed', 'error');
+                            }
+                        });
+                    } else {
+                        $cell.text(oldValue);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

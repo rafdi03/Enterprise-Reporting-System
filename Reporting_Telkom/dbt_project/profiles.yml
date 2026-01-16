@@ -1,0 +1,12 @@
+dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: Aryaguna2022
+      port: 5432
+      dbname: reporting_telkom
+      schema: public
+      threads: 1
