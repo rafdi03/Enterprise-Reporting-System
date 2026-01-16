@@ -1,11 +1,12 @@
 # 📡 Enterprise Telco Reporting System
-![Uploading Screenshot 2026-01-15 230753.png…]()
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-1.7-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
+
+<img width="1438" height="775" alt="Screenshot 2026-01-15 230753" src="https://github.com/user-attachments/assets/bb279e38-5d32-4dd6-86c7-7c38c0ac546b" />
 
 > **Architected by:** Aryaguna Abi Rafdi Yasa
 
