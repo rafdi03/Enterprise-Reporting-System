@@ -18,6 +18,78 @@ By integrating **Django** as the orchestration layer and **dbt (data build tool)
 
 ---
 
+To make your project look truly **Enterprise-Grade**, you need a **Data Pipeline Architecture Diagram**. This visualizes how data travels from the user's CSV file all the way to the final dashboard.
+
+This is exactly what potential employers or clients want to see: **Logic and Architecture.**
+
+Here is a professional breakdown of the **Data Flow** and **User Interface (UI) Flow** for your system.
+
+---
+
+### 1. High-Level Data Pipeline Architecture (For README)
+
+You can copy this **Mermaid** code into your `README.md` (GitHub supports Mermaid diagrams natively). It renders a beautiful flowchart.
+
+```mermaid
+graph TD
+    %% Styles
+    classDef user fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef app fill:#667eea,stroke:#333,stroke-width:2px,color:white;
+    classDef db fill:#4169E1,stroke:#333,stroke-width:2px,color:white;
+    classDef dbt fill:#FF694B,stroke:#333,stroke-width:2px,color:white;
+
+    subgraph "Frontend Layer (Glassmorphism UI)"
+        User((User / Engineer)):::user
+        UploadUI[📂 Upload Interface]:::app
+        DashboardUI[📊 Analytics Dashboard]:::app
+    end
+
+    subgraph "Orchestration Layer (Django)"
+        Ingest[⚙️ Ingestion Service]:::app
+        BatchLogic{Batch Logic}:::app
+        Trigger[⚡ dbt Trigger]:::app
+    end
+
+    subgraph "Data Warehouse (PostgreSQL)"
+        RawTable[(Raw Data Tables)]:::db
+        StagingView[(Staging Views)]:::db
+        FinalTable[(Reporting Marts)]:::db
+    end
+
+    subgraph "Transformation Layer (dbt)"
+        dbt_run(dbt run):::dbt
+        Regex[Regex Extraction]:::dbt
+        BizLogic[Business Rules]:::dbt
+    end
+
+    %% Flow Connections
+    User -->|Drag & Drop CSV| UploadUI
+    UploadUI -->|POST Request| Ingest
+    Ingest -->|Generate Suffix| BatchLogic
+    BatchLogic -->|Save data_raw_150126| RawTable
+    
+    Ingest -->|On Success| Trigger
+    Trigger -->|Execute Subprocess| dbt_run
+    
+    dbt_run -->|Read| RawTable
+    dbt_run -->|Clean & Extract| Regex
+    Regex -->|Apply Segmentation| BizLogic
+    BizLogic -->|Materialize| FinalTable
+    
+    DashboardUI -->|Query (SQL)| FinalTable
+    FinalTable -->|Return Data| DashboardUI
+    DashboardUI -->|Download CSV| User
+
+```
+
+### What to do next?
+
+1. **Copy the Mermaid Code** above.
+2. **Edit your `README.md**` file again.
+3. Paste the code inside the README under a new section called `## 🔄 Data Architecture`.
+
+This diagram is what separates "Coding Exercises" from **"System Engineering"**. It shows you understand the *big picture*.
+
 ## 🚀 Key Features
 
 ### 1. Intelligent Data Ingestion
